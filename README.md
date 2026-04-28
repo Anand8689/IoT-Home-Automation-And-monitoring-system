@@ -4,7 +4,7 @@ An ESP32 and Blynk-based smart home automation project that allows users to cont
 
 ## Features
 - Remote control of home appliances using mobile app
-- Real-time sensor monitoring (PIR / IR / Ultrasonic)
+- Real-time sensor monitoring (PIR / IR / Ultrasonic)             ![image alt]
 - WiFi-based IoT connectivity using ESP32
 - Simple and user-friendly Blynk dashboard
 
