@@ -1,96 +1,29 @@
-#define BLYNK_PRINT Serial
-#define BLYNK_TEMPLATE_ID "TMPL3bO8OovHN"
-#define BLYNK_TEMPLATE_NAME "home automation and monitoring system"
+# IoT Home Automation and Monitoring System
 
-#include <WiFi.h>
-#include <BlynkSimpleEsp32.h>
+An ESP32 and Blynk-based smart home automation project that allows users to control and monitor appliances remotely using a mobile app.
 
-// Auth & WiFi
-char auth[] =  "UZNfEMO3HKwc7rkAxOB3xTyx9MO8gq0-";
-char ssid[] = "Redmi 13C";
-char pass[] = "9619358320";
-BlynkTimer timer;
-void sendSensor();
+## Features
+- Remote control of home appliances using mobile app
+- Real-time sensor monitoring (PIR / IR / Ultrasonic)
+- WiFi-based IoT connectivity using ESP32
+- Simple and user-friendly Blynk dashboard
 
-// Blynk control   
-BLYNK_WRITE(V0) { digitalWrite(27, param.asInt()); }
-BLYNK_WRITE(V1) { digitalWrite(26, param.asInt()); }
-BLYNK_WRITE(V4) { digitalWrite(33, param.asInt()); }
-BLYNK_WRITE(V5) { digitalWrite(14, param.asInt()); }
-void setup()
-{ 
-  Serial.begin(115200);
+## Components Used
+- ESP32 Microcontroller
+- Relay Module
+- PIR / IR / Ultrasonic Sensors (as applicable)
+- Blynk IoT App
+- WiFi Connection
 
-  pinMode(27, OUTPUT);
-  pinMode(26, OUTPUT);
-  pinMode(25, OUTPUT);
-  pinMode(13, OUTPUT);
-  pinMode(33, OUTPUT); //relay
-  pinMode(32, OUTPUT); //triger
-  pinMode(39, INPUT); //vn ir
-  pinMode(34, INPUT); //pir
-  pinMode(35, INPUT); // utr echo
-  pinMode(14, OUTPUT);
-  digitalWrite(33, HIGH);   //  Relay OFF at start
+## Working Principle
+The ESP32 connects to a WiFi network and communicates with the Blynk cloud. The mobile app sends commands to ESP32, which controls relays connected to appliances. Sensors send real-time data back to the app for monitoring.
 
-WiFi.begin(ssid, pass);
+## Setup Instructions
+1. Install Arduino IDE and ESP32 board package
+2. Install Blynk library
+3. Configure Blynk app and get Auth Token
+4. Upload code to ESP32
+5. Connect hardware and power on system
 
-while (WiFi.status() != WL_CONNECTED) {
-  delay(500);
-  Serial.print(".");
-}
-
-Serial.println("\nWiFi Connected");
-
-Blynk.config(auth);
-Blynk.connect();
-timer.setInterval(1000L, sendSensor); // 1 second
-}
-
-void loop()
-{
-  Blynk.run();
-  timer.run();
-}
-void sendSensor()
-{
-  long duration;
-  float distance;
-
-  // Trigger
-  digitalWrite(32, LOW);
-  delayMicroseconds(2);
-  digitalWrite(32, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(32, LOW);
-
-  // Read echo
-  duration = pulseIn(35, HIGH, 20000);
-
-  if(duration == 0){
-    Serial.println("No echo");
-    return;
-  }
-
-  // Convert to distance (this is your analog value)
-  distance = duration * 0.034 / 2;
-  if (distance < 20 && distance > 0) {
-  digitalWrite(25, HIGH);   // ON
-} else {
-  digitalWrite(25, LOW);    // OFF
-}
-
-float percentage = (1 - (distance / 200.0)) * 100.0;
-
-// Limit range
-if (percentage > 100) percentage = 100;
-if (percentage < 0) percentage = 0;
-Blynk.virtualWrite(V6, percentage);
-Blynk.virtualWrite(V3, distance);
-  int pirState = digitalRead(34);
-  int irState = digitalRead(39);
-
-  // Send correct value to Blyn
-  Blynk.virtualWrite(V7, pirState);
-  Blynk.virtualWrite(V8, !irState);
-}
+## Author
+Anand Pandey
