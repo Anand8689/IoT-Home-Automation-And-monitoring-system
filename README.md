@@ -18,26 +18,33 @@ width="100%"/>
 </tr>
 </table>
 An ESP32 and Blynk-based smart home automation project that allows users to control and monitor appliances remotely using a mobile app.
+<table width="50%" align="right">
+<tr>
+<td width="33%" valign="top" align="right">
+   <img src=
+"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_5_2026-05-01_20-01-18.jpg"<img align="right"width="250" height="500" alt="image" />
+</td>
+  <td width="33%" valign="top" align="right">
+   <img src=
+"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_5_2026-05-01_20-01-18.jpg"<img align="right"width="250" height="500" alt="image" />
+  </tr>
+</table>
 
-## Features
+
+### Feature
 - Remote control of home appliances using mobile app
 - Real-time sensor monitoring (PIR / IR / Ultrasonic)             
 - WiFi-based IoT connectivity using ESP32
 - Simple and user-friendly Blynk dashboard
-<table width="100%"align="right">
-<tr>
-<td width="50%" align="top" align="right">
-  <img align="top"src=
-"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_5_2026-05-01_20-01-18.jpg"<img align="top"width="400" height="500" alt="image" />
-</td>
-## Components Used
+
+### Components Used
 - ESP32 Microcontroller
 - Relay Module
 - PIR / IR / Ultrasonic Sensors (as applicable)
 - Blynk IoT App
 - WiFi Connection
 
-## Working Principle
+### Working Principle
 The ESP32 connects to a WiFi network and communicates with the Blynk cloud. The mobile app sends commands to ESP32, which controls relays connected to appliances. Sensors send real-time data back to the app for monitoring.
 
 ## Setup Instructions
