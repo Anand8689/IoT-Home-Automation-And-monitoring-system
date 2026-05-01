@@ -12,7 +12,8 @@ width="100%"/>
 </td>
 
 <td width="33%" valign="top" align="center">
-  <img src="https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_7_2026-05-01_20-01-18.jpg" width="100%"/>
+  <img src="https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_7_2026-05-01_20-01-18.jpg
+" width="100%"/>
 </td>
 
 </tr>
@@ -22,11 +23,13 @@ An ESP32 and Blynk-based smart home automation project that allows users to cont
 <tr>
 <td width="33%" valign="top" align="right">
    <img src=
-"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_5_2026-05-01_20-01-18.jpg"<img align="right"width="250" height="500" alt="image" />
+"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_2026-04-22_18-10-36.jpg
+"<img align="right"width="250" height="500" alt="image" />
 </td>
   <td width="33%" valign="top" align="right">
    <img src=
-"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_5_2026-05-01_20-01-18.jpg"<img align="right"width="250" height="500" alt="image" />
+"https://github.com/Aanand-pandey/IoT-Home-Automation-And-monitoring-system/blob/main/photo_5_2026-05-01_20-01-18.jpg
+"<img align="right"width="250" height="500" alt="image" />
   </tr>
 </table>
 
